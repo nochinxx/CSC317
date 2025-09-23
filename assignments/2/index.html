@@ -3,79 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mario Jimenez - Personal Webpage</title>
+    <title>Mario Jimenez Illesca - Personal Webpage</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 </html>
-<body>
-  <header>
-    <h1>Mario Jimenez</h1>
-    <p>Computer Science Student</p>
+<body
+  style="
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0;
+    background-color: aliceblue;
+  "
+>
+  <header class="site-header">
+    <h1>Mario Jimenez Illesca</h1>
+    <h2>Computer Science Student</h2>
+    <p style="margin:4px 0 0 0;">
+      <a href="mailto:mariojillesca@gmail.com">mariojillesca@gmail.com</a> · 
+      <a href="https://github.com/nochinxx">GitHub</a> · 
+      <a href="https://www.linkedin.com/in/mario-jimenez-7b9683206/">LinkedIn</a> · 
+      <a href="/blog/">Blog</a>
+    </p>
   </header>
-  <main>
-    <div class="card" style="display:flex; align-items:center; gap:16px; margin-top:24px;">
-
-      <img src="images/headshot.JPG" alt="Mario Jimenez picture" style="width:200px; height: 200px; border-radius:50%; object-fit:cover;">
-      <div class="container">
-      </div>
+  <main
+    style="
+      display: flex;
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0;
+    "
+  >
+    <div
+      class="card"
+      style="display: flex; align-items: center; gap: 16px; margin-top: 24px"
+    >
+      <img
+        src="images/headshot1.png"
+        alt="Mario Jimenez picture"
+        style="
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+        "
+      />
+      <div class="container"></div>
     </div>
-
+    <!-- about  -->
     <h2>About Me</h2>
     <p>
       I am a computer science student at SFSU. I am passionate about technology
       and programming. In my free time, I enjoy hiking, reading, and surfing.
     </p>
-    <h2>Skills</h2>
-
-    <h3>Programming Languages:</h3>
-    C++, Python, Java, JavaScript/TypeScript, React/Next.js, Firebase/Firestore, Tailwind, Git.
-    <h2>Projects</h2>
-
+    <!-- skills -->
+    <section >
+      <h2 >Skills</h2>
+      <h3>Programming Languages & Tools</h3>
+      <ul >
+        <li>C++</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript / TypeScript</li>
+      </ul>
+      <h3>Frameworks</h3>
+      <ul>
+        <li>React / Next.js</li>
+        <li>Django</li>
+        <li>Node.js</li>
+        <li>Springboot</li>
+      </ul>
+      <h3>Tools</h3>  
+      <ul>
+        <li>VS Code</li>
+        <li>Firebase / Firestore</li>
+        <li>Tailwind</li>
+        <li>Git</li>
+      </ul>
+      
+    </section>
+    <!-- projects -->
+     <section>
+      <h2>Projects</h2>
     <div class="grid">
-      <div class="project-card">
-        <h3><a href="https://nochinxx.github.io/projects/ucsd-data-structures/">
-          UCSD Data Structures & Performance
-        </a>
+        <h3>
+          <a href="https://nochinxx.github.io/projects/ucsd-data-structures/">
+            UCSD Data Structures & Performance
+          </a>
         </h3>
         <h4>Java · Algorithms · Data Structures</h4>
         <p>
-          A series of five CS projects covering linked lists, tries, autocomplete, text analysis, performance benchmarking, 
-          and spelling suggestion engines. Focused on implementing core data structures from scratch, optimizing algorithms, 
-          and validating correctness with JUnit tests. 
+          A series of five CS projects covering linked lists, tries,
+          autocomplete, text analysis, performance benchmarking, and spelling
+          suggestion engines. Focused on implementing core data structures from
+          scratch, optimizing algorithms, and validating correctness with JUnit
+          tests.
         </p>
         <p>
           <a href="https://github.com/nochinxx/ucsd-data-structures">Code</a>
         </p>
-      </div>
     </div>
-    
+
     <div class="grid">
-        <h3><a href="{{ '/projects/dayton-sheets/' | relative_url }}">Dayton Financial RFQ Tool</a> 
-          <span class="badge">Next.js · Firebase · Firestore · TanStack</span>
-        </h3>
-        <p>
-          Multi-tenant RFQ and quoting platform featuring real-time buyer/seller dashboards, role-based access, interactive spreadsheet UI, seller magic links, batch updates, and buyer aggregation views. 
-          Replaced complex spreadsheets and saved thousands in operational costs.
-        </p>
-        <p>
-          <a href="https://github.com/nima64/Dayton-Sheets">Code</a> · 
-          <a href="https://dayton-sheets-git-main-rintarouokabe12gmailcoms-projects.vercel.app/">Live</a>
-        </p>
-      </div>
-    
-      <div class="project-card">
-        <h3>Nutrition Tracker <span class="badge">React · Firebase</span></h3>
-        <p>
-          USDA API integration to scrape all the nutrients from different foods, charts, role-based access, and daily macro insights with clean UI.
-        </p>
-        <p>
-          <a href="https://github.com/nima64/nutrition-nextjs">Code</a> · 
-          <a href="https://nutrition-nextjs.vercel.app/">Live</a>
-        </p>
-      </div>
-    
-    <h2>Contact Me</h2>
-    <a href="mailto:mariojillesca@gmail.com">Email</a>
-    
+      <h3> 
+        <!-- I coauthored this project -->
+        <a href="https://github.com/nima64/Dayton-Sheets"
+          >Dayton Financial RFQ Tool</a
+        >
+      </h3>
+      <h4>Next.js · Firebase · Firestore · TanStack</h4>
+      <p>
+        Multi-tenant RFQ and quoting platform featuring real-time buyer/seller
+        dashboards, role-based access, interactive spreadsheet UI, seller magic
+        links, batch updates, and buyer aggregation views. Replaced complex
+        spreadsheets and saved thousands in operational costs.
+      </p>
+      <p>
+        <a href="https://github.com/nima64/Dayton-Sheets">Code</a> ·
+        <a
+          href="https://dayton-sheets-git-main-rintarouokabe12gmailcoms-projects.vercel.app/"
+          >Live</a
+        >
+      </p>
+    </div>
+    <div class="grid">
+      <!-- I coauthored this project -->
+      <h3>Nutrition Tracker </h3>
+      <h4>Next.js · USDA API · Chart.js · Tailwind</h4>
+      <p>
+        USDA API integration to scrape all the nutrients from different foods,
+        charts, role-based access, and daily macro insights with clean UI.
+      </p>
+      <p>
+        <a href="https://github.com/nima64/nutrition-nextjs">Code</a> ·
+        <a href="https://nutrition-nextjs.vercel.app/">Live</a>
+      </p>
+    </div>
+     </section>
   </main>
 </body>
