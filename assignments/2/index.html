@@ -13,6 +13,13 @@
     <p>Computer Science Student</p>
   </header>
   <main>
+    <div class="card" style="display:flex; align-items:center; gap:16px; margin-top:24px;">
+
+      <img src="images/headshot.JPG" alt="Mario Jimenez picture" style="width:50%">
+      <div class="container">
+      </div>
+    </div>
+
     <h2>About Me</h2>
     <p>
       I am a computer science student at SFSU. I am passionate about technology
@@ -22,6 +29,51 @@
 
     <h3>Programming Languages:</h3>
     C++, Python, Java, JavaScript/TypeScript, React/Next.js, Firebase/Firestore, Tailwind, Git.
+    <h2>Projects</h2>
+
+    <div class="grid">
+      <div class="project-card">
+        <h3><a href="https://nochinxx.github.io/projects/ucsd-data-structures/">
+          UCSD Data Structures & Performance
+        </a>
+        </h3>
+        <h4>Java · Algorithms · Data Structures</h4>
+        <p>
+          A series of five CS projects covering linked lists, tries, autocomplete, text analysis, performance benchmarking, 
+          and spelling suggestion engines. Focused on implementing core data structures from scratch, optimizing algorithms, 
+          and validating correctness with JUnit tests. 
+        </p>
+        <p>
+          <a href="https://github.com/nochinxx/ucsd-data-structures">Code</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="grid">
+        <h3><a href="{{ '/projects/dayton-sheets/' | relative_url }}">Dayton Financial RFQ Tool</a> 
+          <span class="badge">Next.js · Firebase · Firestore · TanStack</span>
+        </h3>
+        <p>
+          Multi-tenant RFQ and quoting platform featuring real-time buyer/seller dashboards, role-based access, interactive spreadsheet UI, seller magic links, batch updates, and buyer aggregation views. 
+          Replaced complex spreadsheets and saved thousands in operational costs.
+        </p>
+        <p>
+          <a href="https://github.com/nima64/Dayton-Sheets">Code</a> · 
+          <a href="https://dayton-sheets-git-main-rintarouokabe12gmailcoms-projects.vercel.app/">Live</a>
+        </p>
+      </div>
+    
+      <div class="project-card">
+        <h3>Nutrition Tracker <span class="badge">React · Firebase</span></h3>
+        <p>
+          USDA API integration to scrape all the nutrients from different foods, charts, role-based access, and daily macro insights with clean UI.
+        </p>
+        <p>
+          <a href="https://github.com/nima64/nutrition-nextjs">Code</a> · 
+          <a href="https://nutrition-nextjs.vercel.app/">Live</a>
+        </p>
+      </div>
+    
     <h2>Contact Me</h2>
     <a href="mailto:mariojillesca@gmail.com">Email</a>
     
