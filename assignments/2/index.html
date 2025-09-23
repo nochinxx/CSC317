@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+<!-- This portfolio is for the use of CSC317 and it is based on my personal one. To check my personal most up to date page check this https://nochinxx.github.io if there's any problems on the use of technologies that we haven't used I can dumb it down -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mario Jimenez Illesca - Personal Webpage</title>
-    <link rel="stylesheet" href="styles.css" />
   </head>
-</html>
 <body
   style="
     display: flex;
@@ -52,30 +51,66 @@
           border-radius: 50%;
           object-fit: cover;
         "
-      />
+      >
       <div class="container"></div>
     </div>
     <!-- about  -->
     <h2>About Me</h2>
-    <p>
+    <p style="
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    flex-wrap:wrap;           
+    text-align:left;          
+    margin-top:24px;
+    max-width:1100px;
+  ">
       I’m a computer science student @SFSU with a focus on building practical,
       real-world applications. I’ve worked on projects like interactive
       dashboards and database-driven tools. Teaching is also an important part
-      of my journey I recently started teaching coding at Marin Horizon Middle
+      of my journey, as I recently started teaching coding at Marin Horizon Middle
       School, and I have experience as a tutor in different places. I’m
       especially interested in software engineering, data science, and exploring
-      emerging technologies like machine learning and VR/AR. 
+      emerging technologies like machine learning and VR/AR.
     </p>
-    <p> 
-      My career goal is
-      to design systems and tools that make complex tasks more intuitive,
-      sustainable, and impactful. Outside of academics and coding, I try to keep
-      a balanced routine that includes working out (cycling, surfing or runnin),
-      spending time with friends, and pursuing projects that let me grow both
-      technically and creatively.
+    <p style="
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    flex-wrap:wrap;           
+    text-align:left;          
+    margin-top:24px;
+    max-width:1100px;
+  ">
+      My career goal is to design systems and tools that make complex tasks more
+      intuitive, sustainable, and impactful. Outside of academics and coding, I
+      try to keep a balanced routine that includes working out (cycling, surfing
+      or running), spending time with friends, and pursuing projects that let me
+      grow both technically and creatively.
     </p>
     <!-- skills -->
-    <section>
+    <div 
+  style="
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    flex-wrap:wrap;           
+    text-align:left;          
+    margin-top:24px;
+    max-width:1100px;
+  "
+>
+<aside
+style="
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+  width:320px;            /* fixed-ish left column */
+  flex:0 1 320px;
+"
+>
       <h2>Skills</h2>
       <h3>Programming Languages & Tools</h3>
       <ul>
@@ -98,19 +133,29 @@
         <li>Tailwind</li>
         <li>Git</li>
       </ul>
-    </section>
+</aside>
     <!-- projects -->
-    <section>
-      <h2>Projects</h2>
+    <section aria-labelledby="projects-heading"
+    style="
+      background:#fff;
+      border:1px solid #e6e6e6;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+      flex:1 1 500px;         
+      min-width:280px;
+    "
+  >
+      <h2 id="projects-heading">Projects</h2>
       <article
-      style="
-        border:1px solid #e6e6e6;
-        border-radius:12px;
-        padding:12px;
-        background:#fafafa;
-        margin-top:12px;
-      "
-    >
+        style="
+          border: 1px solid #e6e6e6;
+          border-radius: 12px;
+          padding: 12px;
+          background: #fafafa;
+          margin-top: 12px;
+        "
+      >
         <h3>
           <a href="https://nochinxx.github.io/projects/ucsd-data-structures/">
             UCSD Data Structures & Performance
@@ -130,14 +175,14 @@
       </article>
 
       <article
-      style="
-        border:1px solid #e6e6e6;
-        border-radius:12px;
-        padding:12px;
-        background:#fafafa;
-        margin-top:12px;
-      "
-    >
+        style="
+          border: 1px solid #e6e6e6;
+          border-radius: 12px;
+          padding: 12px;
+          background: #fafafa;
+          margin-top: 12px;
+        "
+      >
         <h3>
           <!-- I coauthored this project -->
           <a href="https://github.com/nima64/Dayton-Sheets"
@@ -161,14 +206,14 @@
       </article>
 
       <article
-      style="
-        border:1px solid #e6e6e6;
-        border-radius:12px;
-        padding:12px;
-        background:#fafafa;
-        margin-top:12px;
-      "
-    >
+        style="
+          border: 1px solid #e6e6e6;
+          border-radius: 12px;
+          padding: 12px;
+          background: #fafafa;
+          margin-top: 12px;
+        "
+      >
         <!-- I coauthored this project -->
         <h3>Nutrition Tracker</h3>
         <h4>Next.js · USDA API · Chart.js · Tailwind</h4>
@@ -181,7 +226,18 @@
           <a href="https://nutrition-nextjs.vercel.app/">Live</a>
         </p>
       </article>
-
     </section>
+  </div>
   </main>
+  <footer
+    style="
+      text-align: center;
+      padding: 16px;
+      background-color: #f0f0f0;
+      width: 100%;
+      margin-top: 24px;
+    ">
+    <p>This portfolio is for the use of CSC317 to check my personal most up to date page check this <a href="https://nochinxx.github.io">link.</a></p>
+  </footer>
 </body>
+</html>
