@@ -1,0 +1,45 @@
+/* Make the hero fill the viewport and center content */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;              /* stack headline + button */
+  align-items: center;                 /* horizontal center */
+  justify-content: center;             /* vertical center */
+  text-align: center;
+
+  /* Background image covers the screen */
+  background: url("image.png") center / cover no-repeat;
+}
+
+/* Typography: desktop/tablet default */
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: 3rem;
+}
+
+/* Button + hover (darker on hover) */
+.hero button {
+  background: #2a6fdb;
+  color: #fff;
+  border: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.hero button:hover {
+  background: #184aa6; /* darker */
+}
+
+/* Phones narrower than 600px */
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
