@@ -24,6 +24,10 @@ html {
   /* Reserve space for sticky nav anchor offsets */
   scroll-padding-top: 72px;
 }
+header{
+  --heading-height: 12rem;
+  text-align: center;
+}
 
 body {
   margin: 0;
