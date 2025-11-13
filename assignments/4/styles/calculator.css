@@ -1,28 +1,122 @@
+:root {
+    --navy: #0b1e3a;
+    --dark-background:rgb(30, 30, 30);
+    --dark-button:rgb(68, 68, 68);
+    --light-button:rgb(154, 154, 154);
+    --orange: rgb(236, 120, 60);
+  }
+  * { box-sizing: border-box; }
 body{
+    margin: 0;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    background-color: var(--dark-background);
+    color: #fff;
     text-align: center;
-    margin-top: 50px;
-    background-color: rgb(78, 78, 78);
+    /* margin-top: 50px;  */
 }
+
+/* responsiveness
+ */
+
+ .calculator {
+    width: clamp(280px, 92vw, 520px); /* larger on desktop */
+    display: grid;
+    gap: 12px;
+  }
+  
+  @media (min-width: 900px) {
+    .calculator { width: 560px; }     
+  }
 
 table {
-    border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
+    border-spacing: 4px;
 }
 
-input[type="button"] {
+input[type="button"]{
     width: 50px;
     height: 50px;
-    background-color: rgb(236, 117, 57);
+    background-color: var(--dark-button);
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s; 
+}
+
+input[type="button"]#r1{
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-button);
     color: white;
     font-size: 24px;
     font-weight: bold;
     border: none;
-    border-radius: 50%
+    border-radius: 50%;
+    transition: background-color 0.3s; 
 }
 
-input[type="text"] {
-    font-size: 24px;
+input[type="button"]#c4{
+    width: 50px;
+    height: 50px;
+    background-color: var(--orange);
+    color: white;
+
+    /* font-size: 24px; */
+    font-size: 1.2rem;
+    text-align: center;
     font-weight: bold;
-    border: 2px solid black;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s; 
 }
+input[type="button"]:hover {
+    background-color: rgb(80, 80, 90); /* Lighter color on hover */
+}
+input[type="button"]:hover#c4 {
+    background-color: rgb(255, 153, 102); /* Lighter color on hover */
+}
+input[type="button"]:hover#r1 {
+    background-color: rgb(170, 170, 170); /* Lighter color on hover */
+}
+/* textbox */
+input[type="text"] {
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.5rem;
+    
+    /* font-size: 24px;         */
+    font-weight: bold;
+    background-color: var(--dark-background);
+    border: none;
+    color: white; 
+} 
+/*  
+#result {
+    width: 100%; 
+    padding: 14px 16px;
+      font-size: clamp(1.25rem, 4.5vw, 2.25rem);
+      font-weight: 700;
+      text-align: right;
+      background: var(--dark-background);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      outline: none;
+
+      
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 10px;
+    background-color: var(--dark-background);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;  
+  }
+  */

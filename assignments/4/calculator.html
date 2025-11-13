@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta charset="UTF-8" >
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
     <title>Calculator</title>
-    <link id="css-theme" rel="stylesheet" href="styles/calculator.css" >
-</head>
-<body>
+    <link id="css-theme" rel="stylesheet" href="styles/calculator.css" />
+  </head>
+  <body>
     <!-- calculator code structure inspired by https://www.geeksforgeeks.org/html/html-calculator/ -->
+	<div class="calculator">
+	<input type="text" value="0" id="result" disabled />
     <table id="calculator">
-		<tr>
-			<td colspan="3"><input type="text" id="result"></td>
-			<td><input type="button" value="AC" onclick="" /> </td>
-		</tr>
-		<tr>
-			<!-- create button and assign value to each button -->
-			<td><input type="button" value="1" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="2" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="3" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="/" onclick=""
-						onkeydown=""> </td>
-		</tr>
-		<tr>
-			<td><input type="button" value="4" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="5" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="6" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="*" onclick=""
-						onkeydown=""> </td>
-		</tr>
-		<tr>
-			<td><input type="button" value="7" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="8" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="9" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="-" onclick=""
-						onkeydown=""> </td>
-		</tr>
-		<tr>
-			<td><input type="button" value="0" onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="." onclick=""
-						onkeydown=""> </td>
-			<td><input type="button" value="=" onclick=""> </td>
-
-			<td><input type="button" value="+" onclick=""
-						onkeydown=""> </td>
-		</tr>
-	</table>
-</body>
+      
+      <tr>
+        <!-- create button and assign value to each button -->
+        <td><input type="button" value="<" onclick="" onkeydown="" id="r1"/></td>
+        <td><input type="button" value="AC" onclick="" onkeydown=""id="r1"/></td>
+        <td><input type="button" value="%" onclick="" onkeydown="" id="r1"/></td>
+        <td><input type="button" value="/" onclick="" onkeydown="" id="c4"/></td>
+      </tr>
+	  <tr>
+        <td><input type="button" value="7" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="8" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="9" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="*" onclick="" onkeydown="" id="c4"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="5" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="6" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="-" onclick="" onkeydown="" id="c4"/></td>
+      </tr>
+	  <tr>
+		<td><input type="button" value="1" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="2" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="3" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="+" onclick="" onkeydown="" id="c4"/></td>
+      </tr>
+      
+      <tr>
+        <td><input type="button" value="+/-" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="0" onclick="" onkeydown="" /></td>
+        <td><input type="button" value="." onclick="" onkeydown="" /></td>
+        <td><input type="button" value="=" onclick="" id="c4"/></td>
+      </tr>
+    </table>
+</div>
+  </body>
 </html>
