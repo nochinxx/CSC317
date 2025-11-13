@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" >
+    <title>Calculator</title>
+    <link id="css-theme" rel="stylesheet" href="styles/calculator.css" >
 </head>
 <body>
-    <h1>JavaScript Week 0 Practice</h1>
-    <button id="greetButton">Click Me!</button>
-    <div id="output"></div>
-    
-    <script src="hello.js"></script>
-    <script>
-        document.getElementById("greetButton").addEventListener("click", function() {
-            document.getElementById("output").textContent = createMessage("JavaScript");
-        });
-    </script>
+    <!-- calculator code structure inspired by https://www.geeksforgeeks.org/html/html-calculator/ -->
+    <table id="calculator">
+		<tr>
+			<td colspan="3"><input type="text" id="result"></td>
+			<td><input type="button" value="AC" onclick="" /> </td>
+		</tr>
+		<tr>
+			<!-- create button and assign value to each button -->
+			<td><input type="button" value="1" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="2" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="3" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="/" onclick=""
+						onkeydown=""> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="5" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="6" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="*" onclick=""
+						onkeydown=""> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="8" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="9" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="-" onclick=""
+						onkeydown=""> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0" onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="." onclick=""
+						onkeydown=""> </td>
+			<td><input type="button" value="=" onclick=""> </td>
+
+			<td><input type="button" value="+" onclick=""
+						onkeydown=""> </td>
+		</tr>
+	</table>
 </body>
 </html>
