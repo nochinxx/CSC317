@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       // Delete last char
-      if (value == "<") {
+      if (value == "⌫") {
         console.log("Delete Last Character");
         if (resultElement.value.length > 1) {
           // Pop the last char
@@ -33,5 +33,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add event listeners to all buttons and pass their value to display function
   buttons.forEach((button) => {
     button.addEventListener("click", () => display(button.value));
+  });
+
+  // Add keydown event listener for keyboard input
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+  
+    // Allow only valid keys (numbers, operators, etc.)
+    if (
+      (key >= "0" && key <= "9") || // Numbers
+      ["+", "-", "*", "/", ".", "Enter", "Backspace"].includes(key)
+    ) {
+      if (key === "Enter") {
+        display("="); // Map Enter key to "="
+      } else if (key === "Backspace") {
+        display("⌫"); // Map Backspace key to "<"
+      } else if (key==="/"){
+        display("÷")
+      }
+      
+      else {
+        display(key); // Pass the key directly
+      }
+    }
   });
 });
