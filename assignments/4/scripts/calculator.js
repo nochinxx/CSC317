@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll('input[type="button"]');
   const resultElement = document.getElementById("result");
+  let evaluated = false; // global variable to make sure that after an expression is evaluated we clear the calculator
   console.log("Result Element:", resultElement);
   // Function to update the display
   let display = (value) => {
     if (resultElement) {
       console.log("Current Result:", value);
+      console.log("Evaluated: ", evaluated);
+      if (evaluated) {
+        resultElement.value = "0";
+        evaluated = false;
+      }
       // Clear all
       if (value == "AC") {
         resultElement.value = "0";
@@ -44,9 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let evaluateExpression = (expression) => {
     try {
       if (!expression) return "0";
+      // division
       let sanitizedExpression = expression.replace(/÷/g, "/");
+      // percentage
+      sanitizedExpression = expression.replace(/%/g, "*.01");
       console.log("Sanitized Expression:", sanitizedExpression);
       const result = eval(sanitizedExpression);
+      evaluated = true;
       return result;
     } catch (error) {
       console.error("Error evaluating expression:", error);
@@ -64,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Allow only valid keys (numbers, operators, etc.)
     if (
       (key >= "0" && key <= "9") || // Numbers
-      ["+", "-", "*", "/", ".", "=", "Enter", "Backspace"].includes(key)
+      ["+", "-", "*", "/", ".", "=", "%", "Enter", "Backspace"].includes(key)
     ) {
       if (key === "Enter" || key === "=") {
         result = evaluateExpression(resultElement.value);
@@ -74,8 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         display("⌫"); // Map Backspace key to "⌫"
       } else if (key === "/") {
         display("÷");
-      } 
-       else {
+      } else {
         display(key); // Pass the key directly
       }
     }
