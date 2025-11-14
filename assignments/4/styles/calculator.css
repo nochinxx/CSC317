@@ -1,122 +1,127 @@
 :root {
-    --navy: #0b1e3a;
-    --dark-background:rgb(30, 30, 30);
-    --dark-button:rgb(68, 68, 68);
-    --light-button:rgb(154, 154, 154);
-    --orange: rgb(236, 120, 60);
-  }
-  * { box-sizing: border-box; }
-body{
-    margin: 0;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
-    background-color: var(--dark-background);
-    color: #fff;
-    text-align: center;
-    /* margin-top: 50px;  */
+  --navy: #0b1e3a;
+  --dark-background: rgb(30, 30, 30);
+  --dark-button: rgb(68, 68, 68);
+  --light-button: rgb(154, 154, 154);
+  --orange: rgb(236, 120, 60);
+  --button-width: 50px;
+  --button-height: 50px;
+  --button-wh: 100px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background-color: var(--dark-background);
+  color: #fff;
+  text-align: center;
+  /* margin-top: 50px;  */
 }
 
 /* responsiveness
  */
 
- .calculator {
-    width: clamp(280px, 92vw, 520px); /* larger on desktop */
-    display: grid;
-    gap: 12px;
+.calculator {
+  width: clamp(280px, 92vw, 520px); /* larger on desktop */
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+    :root{
+  --button-wh: 50px;
+
+    }
+  .calculator {
+    width: 60%;
   }
-  
-  @media (min-width: 900px) {
-    .calculator { width: 560px; }     
-  }
+  /* #row{
+    width:50rem;
+  } */
+}
 
 table {
-    margin-left: auto;
-    margin-right: auto;
-    border-spacing: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 4px;
 }
 
-input[type="button"]{
-    width: 50px;
-    height: 50px;
-    background-color: var(--dark-button);
-    color: white;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: bold;
-    border: none;
-    border-radius: 50%;
-    transition: background-color 0.3s; 
+input[type="button"] {
+  width: var(--button-wh);
+  height: var(--button-wh);
+  background-color: var(--dark-button);
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  /* font-weight: bold; */
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
-input[type="button"]#r1{
-    width: 50px;
-    height: 50px;
-    background-color: var(--light-button);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    border: none;
-    border-radius: 50%;
-    transition: background-color 0.3s; 
+input[type="button"]#r1 {
+  width: var(--button-wh);
+  height: var(--button-wh);
+  background-color: var(--light-button);
+  color: white;
+  font-size: 24px;
+  /* font-weight: bold; */
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
-input[type="button"]#c4{
-    width: 50px;
-    height: 50px;
-    background-color: var(--orange);
-    color: white;
+input[type="button"]#c4 {
+  width: var(--button-wh);
+  height: var(--button-wh);
+  background-color: var(--orange);
+  color: white;
 
-    /* font-size: 24px; */
-    font-size: 1.2rem;
-    text-align: center;
-    font-weight: bold;
-    border: none;
-    border-radius: 50%;
-    transition: background-color 0.3s; 
+  /* font-size: 24px; */
+  font-size: 1.2rem;
+  text-align: center;
+  /* font-weight: bold; */
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 input[type="button"]:hover {
-    background-color: rgb(80, 80, 90); /* Lighter color on hover */
+  background-color: rgb(80, 80, 90); /* Lighter color on hover */
 }
 input[type="button"]:hover#c4 {
-    background-color: rgb(255, 153, 102); /* Lighter color on hover */
+  background-color: rgb(255, 153, 102); /* Lighter color on hover */
 }
 input[type="button"]:hover#r1 {
-    background-color: rgb(170, 170, 170); /* Lighter color on hover */
+  background-color: rgb(170, 170, 170); /* Lighter color on hover */
 }
 /* textbox */
 input[type="text"] {
-    box-sizing: border-box;
-    text-align: right;
-    font-size: 1.5rem;
-    
-    /* font-size: 24px;         */
-    font-weight: bold;
-    background-color: var(--dark-background);
-    border: none;
-    color: white; 
-} 
-/*  
-#result {
-    width: 100%; 
-    padding: 14px 16px;
-      font-size: clamp(1.25rem, 4.5vw, 2.25rem);
-      font-weight: 700;
-      text-align: right;
-      background: var(--dark-background);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      outline: none;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 1.5rem;
 
-      
-    height: 60px;
-    font-size: 2rem;
-    text-align: right;
-    margin-bottom: 10px;
-    background-color: var(--dark-background);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    box-sizing: border-box;  
-  }
-  */
+  /* font-size: 24px;         */
+  /* font-weight: bold; */
+  background-color: var(--dark-background);
+  border: none;
+  color: white;
+}
+
+#result {
+  /* width: 50%; */
+  /* padding: 14px 16px; */
+  font-size: clamp(1.25rem, 4.5vw, 2.25rem);
+  font-weight: 700;
+  text-align: right;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+}
+#row {
+    width: .5rem;
+}

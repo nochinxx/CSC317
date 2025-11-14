@@ -10,35 +10,35 @@
   <body>
     <!-- calculator code structure inspired by https://www.geeksforgeeks.org/html/html-calculator/ -->
     <div class="calculator">
-      <input type="text" value="0" id="result" disabled />
       <table id="calculator">
-        <tr>
+		<tr id="row"><input type="text" value="0" id="result" disabled /></tr>
+        <tr id="row">
           <!-- create button and assign value to each button -->
           <td><input type="button" value="⌫" id="r1" /></td>
           <td><input type="button" value="AC" id="r1" /></td>
           <td><input type="button" value="%" id="r1" /></td>
           <td><input type="button" value="÷" id="c4" /></td>
         </tr>
-        <tr>
+        <tr id="row">
           <td><input type="button" value="7" /></td>
           <td><input type="button" value="8" /></td>
           <td><input type="button" value="9" /></td>
           <td><input type="button" value="*" id="c4" /></td>
         </tr>
-        <tr>
+        <tr id="row">
           <td><input type="button" value="4" /></td>
           <td><input type="button" value="5" /></td>
           <td><input type="button" value="6" /></td>
           <td><input type="button" value="-" id="c4" /></td>
         </tr>
-        <tr>
+        <tr id="row">
           <td><input type="button" value="1" /></td>
           <td><input type="button" value="2" /></td>
           <td><input type="button" value="3" /></td>
           <td><input type="button" value="+" id="c4" /></td>
         </tr>
 
-        <tr>
+        <tr id="row">
           <td><input type="button" value="+/-" /></td>
           <td><input type="button" value="0" /></td>
           <td><input type="button" value="." /></td>
