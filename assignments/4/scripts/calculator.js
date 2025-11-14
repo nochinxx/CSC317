@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           resultElement.value = resultElement.value.slice(0, -1);
           return;
         }
+        // If only one char left, reset to 0
         else if (resultElement.value.length <= 1) {
           resultElement.value = "0";
           return;
@@ -47,11 +48,10 @@ document.addEventListener("keydown", (event) => {
       if (key === "Enter") {
         display("="); // Map Enter key to "="
       } else if (key === "Backspace") {
-        display("⌫"); // Map Backspace key to "<"
+        display("⌫"); // Map Backspace key to "⌫"
       } else if (key==="/"){
         display("÷")
-      }
-      
+      }  
       else {
         display(key); // Pass the key directly
       }
