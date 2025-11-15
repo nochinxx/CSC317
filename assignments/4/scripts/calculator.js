@@ -3,6 +3,76 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultElement = document.getElementById("result");
   let evaluated = false; // global variable to make sure that after an expression is evaluated we clear the calculator
   console.log("Result Element:", resultElement);
+
+  // Helper to handle the toggle +/-
+  function toggleSign(expression) {
+    if (!expression) return "0";
+
+    // Keep '%' output of the token we toggle
+    let hadPercent = false;
+    if (expression.endsWith("%")) {
+      hadPercent = true;
+      expression = expression.slice(0, -1);
+    }
+
+    let end = expression.length - 1;
+
+    // If the expression ends with "(-number)"
+    if (expression[end] === ")") {
+      // Walk left over the digits/decimal
+      let j = end - 1;
+      // used Ai to research regex for digit and decimal check (gpt-5)
+      while (j >= 0 && /[0-9.]/.test(expression[j])) j--;
+      const numStart = j + 1;
+
+      // Check for "(-" immediately before the number and an operator (or start) before "("
+      if (
+        expression[numStart - 1] === "-" &&
+        expression[numStart - 2] === "("
+      ) {
+        const prev = numStart - 3 >= 0 ? expression[numStart - 3] : null;
+        // used ai to research regex for operator check (gpt-5)
+        if (prev === null || /[+\-×÷*/]/.test(prev)) {
+          // unwrap: "...(-123)" -> "...123"
+          const output =
+            expression.slice(0, numStart - 2) + expression.slice(numStart, end);
+          return hadPercent ? output + "%" : output;
+        }
+      }
+    }
+
+    // Not wrapped: find the last number token
+    let i = end;
+    while (i >= 0 && /[0-9.]/.test(expression[i])) i--;
+    const start = i + 1;
+    const number = expression.slice(start, end + 1);
+    // ternary to handle empty number case
+    if (!number) return hadPercent ? expression + "%" : expression;
+
+    // If there's a unary minus directly before the number, remove it (…+-123 -> …+123)
+    let hasUnaryMinus = false;
+    if (start > 0 && expression[start - 1] === "-") {
+      const prev = start - 2 >= 0 ? expression[start - 2] : null;
+      if (prev === null || /[+\-×÷*/]/.test(prev)) hasUnaryMinus = true;
+    }
+
+    let output;
+    if (hasUnaryMinus) {
+      output =
+        expression.slice(0, start - 1) + number + expression.slice(end + 1);
+    } else {
+      // Wrap positive: "...123" -> "...(-123)"
+      output =
+        expression.slice(0, start) +
+        "(-" +
+        number +
+        ")" +
+        expression.slice(end + 1);
+    }
+
+    return hadPercent ? output + "%" : output;
+  }
+
   // Function to update the display
   let display = (value) => {
     if (resultElement) {
@@ -31,6 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
       }
+      // Toggle +/-
+      if (value == "+/-") {
+        resultElement.value = toggleSign(resultElement.value);
+        return;
+      }
       // Evaluate expression
       if (value == "=") {
         console.log("Evaluate Expression");
@@ -50,12 +125,22 @@ document.addEventListener("DOMContentLoaded", function () {
   let evaluateExpression = (expression) => {
     try {
       if (!expression) return "0";
-      // division
+      // division and percentage handling
+      //Replace division symbol
       let sanitizedExpression = expression.replace(/÷/g, "/");
-      // percentage
-      sanitizedExpression = expression.replace(/%/g, "*.01");
-      console.log("Sanitized Expression:", sanitizedExpression);
+
+      // Safely replace % only when preceded by a number or ')'
+      // used Ai to research lookbehind regex (gpt-5)
+      sanitizedExpression = sanitizedExpression.replace(
+        /(?<=\d|\))%/g,
+        " *.01"
+      );
+      console.log("Sanitized Expressionnn:", sanitizedExpression);
       const result = eval(sanitizedExpression);
+      // Check for invalid results
+      if( result === undefined || isNaN(result) || !isFinite(result)) {
+        return "Error";
+      }
       evaluated = true;
       return result;
     } catch (error) {
